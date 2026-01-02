@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Flower</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h1>🌸 Magic Flower</h1>
+  <p class="subtitle">Choose a mood, get a smile</p>
+
+  <div class="modes">
+    <button class="mode active" onclick="setMode('happy',this)">😊 Happy</button>
+    <button class="mode" onclick="setMode('love',this)">❤️ Love</button>
+    <button class="mode" onclick="setMode('selfie',this)">🤳 Selfie</button>
+  </div>
+
+  <input id="nameInput" placeholder="Type any name">
+
+  <button class="mainBtn" onclick="handleAction()">Open 🌼</button>
+
+  <div class="result" id="flowerResult">
+    <img id="flowerImg">
+    <h2 id="showName"></h2>
+  </div>
+
+  <div class="quote" id="quoteBox"></div>
+
+  <!-- SELFIE FRAME -->
+  <div class="selfieFrame hidden" id="selfieFrame">
+    <div class="frameEmoji" id="frameEmoji">😂</div>
+    <video id="video" autoplay playsinline></video>
+    <img id="selfieImg" class="hidden">
+    <div class="frameQuote" id="frameQuote">Get ready 😄</div>
+  </div>
+
+  <button class="snapBtn hidden" id="snapBtn" onclick="takeSelfie()">📸 Click Selfie</button>
+  <button class="downloadBtn hidden" id="downloadBtn" onclick="downloadFrame()">⬇️ Download Frame</button>
+</div>
+
+<audio id="popSound" src="sounds/pop.mp3"></audio>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
